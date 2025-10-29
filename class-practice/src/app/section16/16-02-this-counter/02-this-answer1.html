@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>this의 이해</title>
+    <script>
+      class CounterComponent {
+        count = 10;
+
+        // 해결방법1) 화살표함수로 바꾸면 해결된다
+        onClickCountUp = () => {
+          console.log('onClickCountUp에서의 this는?', this);
+          this.count += 1;
+          console.log(this.count);
+        };
+        render() {
+          console.log('render에서의 this는?', this);
+          const button = document.createElement('button');
+          button.innerText = '카운트 올리기';
+          button.addEventListener('click', this.onClickCountUp);
+          document.body.appendChild(button);
+        }
+      }
+
+      window.onload = () => {
+        const counter = new CounterComponent();
+        counter.render();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

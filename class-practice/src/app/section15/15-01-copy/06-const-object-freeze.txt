@@ -1,0 +1,6 @@
+Object.freeze(profile1)
+{name: '영희', age: 12}
+profile1.name = "맹구"
+'맹구'
+profile1
+{name: '영희', age: 12}

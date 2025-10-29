@@ -1,0 +1,13 @@
+this
+Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}
+
+const profile = {
+    name : "철수",
+    age : 12,
+    school: function(){
+        console.log(this)
+    }
+}
+undefined
+profile.school()
+VM1296:5 {name: '철수', age: 12, school: ƒ}

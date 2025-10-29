@@ -1,0 +1,18 @@
+function useState(받는초기값변수){
+
+    let state = 받는초기값변수
+    const setState = (변경값) =>{
+        console.log(`${state}값에서 ${변경값}으로 변경하겠습니다!`)
+        console.log(`${변경값}으로 화면을 다시 그리겠습니다.(리렌더링)`)
+    }
+    return [state, setState]
+    
+}
+undefined
+const [count, setCount] = useState(0)
+undefined
+count
+0
+setCount(3)
+VM825:5 0값에서 3으로 변경하겠습니다!
+VM825:6 3으로 화면을 다시 그리겠습니다.(리렌더링)

@@ -1,0 +1,14 @@
+const profile1={
+    name: "철수",
+    age: 12
+}
+undefined
+profile1.name = "영희"
+'영희'
+profile1 ={
+     name : "영희",
+    age : 12
+    
+}
+VM1881:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:10
