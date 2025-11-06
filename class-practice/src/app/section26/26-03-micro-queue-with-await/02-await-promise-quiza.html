@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>마이크로큐와 await</title>
+    <script>
+      const onClickButton = () => {
+        console.log('=======시작!!!!=======');
+
+        console.log('=======시작!!!!=======');
+
+        function aaa() {
+          console.log('aaa-시작');
+          bbb();
+          console.log('aaa-끝');
+        }
+
+        async function bbb() {
+          console.log('bbb-시작');
+          await ccc(); // ⬅️ ccc가 끝날 때까지 bbb도 중단(ccc가 먼저 실행되고 await가 진행되는 것)
+          console.log('bbb-끝'); // ⬅️ (2) 마이크로 큐
+        }
+
+        async function ccc() {
+          console.log('ccc-시작');
+          const friend = await '철수';
+          console.log(friend); // ⬅️ (1) 마이크로 큐
+        }
+
+        aaa();
+
+        console.log('=======끝!!!!=======');
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickButton()">시작하기</button>
+  </body>
+</html>

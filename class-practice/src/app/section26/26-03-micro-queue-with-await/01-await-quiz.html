@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>마이크로큐와 await</title>
+    <script>
+      const onClickButton = () => {
+        console.log('=======시작!!!!=======');
+
+        function aaa() {
+          console.log('aaa-시작');
+          bbb(); // ⬅️ async 함수 호출
+          console.log('aaa-끝');
+        }
+
+        async function bbb() {
+          console.log('bbb-시작');
+          const friend = await '철수'; // ⬅️ await!
+          console.log(friend); // ⬅️ 이 뒷부분은 언제 실행될까요?
+        }
+
+        aaa();
+
+        console.log('=======끝!!!!=======');
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickButton()">시작하기</button>
+  </body>
+</html>

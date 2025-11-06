@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      const onClickWithoutAwait = () => {
+        try {
+          fetch('http://qqq');
+          console.log('조회에 성공했습니다.');
+        } catch (error) {
+          console.log('에러발생');
+          console.log('계속 문제시 000으로 연락주세요');
+        }
+      };
+      const onClcickWithAwait = async () => {
+        try {
+          await fetch('http://qqq');
+          console.log('조회에 성공했습니다.');
+        } catch (error) {
+          console.log('에러발생');
+          console.log('계속 문제시 000으로 연락주세요');
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickWithoutAwait()">await없이</button>
+    <button onclick="onClcickWithAwait()">await함께</button>
+  </body>
+</html>

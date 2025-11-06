@@ -21,9 +21,9 @@ export default function ApiHeaderProvider({ children }) {
 
   const uploadLink = createUploadLink({
     uri: 'http://main-practice.codebootcamp.co.kr/graphql',
-    headers: {
-      Authorization: `Bearer ${accessToken} `,
-    },
+    headers: accessToken ? {
+      Authorization: `Bearer ${accessToken}`,
+    } : {},
   });
   const client = new ApolloClient({
     link: ApolloLink.from([uploadLink]),
