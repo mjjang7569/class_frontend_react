@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>나만의 fetch 만들기</title>
+    <script>
+        const myfetch = (API주소)=>{
+            return new Promise((resolve, reject)=>{
+                const qq = new XMLHttpRequest
+                qq.open("get", API주소)
+                qq.send()
+                qq.addEventListener("load", (res) =>{
+                    resolve(res.target.response)
+                })
+            })
+       
+        }
+        const onClickFetch = async()=>{
+            const result = await myfetch("http://main-example.codebootcamp.co.kr/profile/철수")
+            console.log(result)
+            
+            myfetch("http://main-example.codebootcamp.co.kr/profile/철수").then((result)=>{
+                console.log(result)
+            })
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="onClickFetch()">프로필조회</button>
+</body>
+</html>
